@@ -259,7 +259,7 @@ const dishes = [
   { name: "Flasche von Weißwein/Rotwein", price: 19.9 },
   { name: "Merlot", price: 6 },
   { name: "Bordeaux", price: 6 },
-
+  
 ];
 
 const App = () => {

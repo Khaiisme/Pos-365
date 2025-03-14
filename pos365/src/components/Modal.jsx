@@ -123,14 +123,14 @@ const Modal = ({
       <div className="text-xl fixed inset-0 bg-gray-400 bg-opacity-50 flex justify-center items-center z-50">
         <div
           ref={modalRef}
-          className="bg-white p-6 rounded-lg w-full h-full sm:max-w-md sm:h-auto relative"
+          className="bg-white p-6 rounded-lg w-full h-full sm:max-w-md sm:max-h-screen overflow-y-auto"
         >
           {/* Close button (X) */}
           <button
             onClick={() => {
               onClose();
             }}
-            className="absolute mt-12 top-2 right-2 text-2xl font-bold text-black hover:text-gray-700"
+            className="absolute mt-12 top-2 right-2 text-2xl font-bold text-white hover:text-gray-700"
           >
             X
           </button>
@@ -201,14 +201,14 @@ const Modal = ({
 
           {/* Total */}
           <div className="mt-4 font-bold bg-blue-300 w-full rounded-lg p-4">
-            Ingesamt:<span className="text-2xl ml-50">{calculateTotal()}€</span>
+            Ingesamt:<span className="text-2xl ml-20">{calculateTotal()}€</span>
           </div>
 
           {/* Pay Button */}
           <div className="bg-gray-600 mt-6">
             <button
               onClick={handlePay}
-              className=" text-black text-4xl py-2 px-4 rounded-xl w-full"
+              className=" text-white text-4xl py-2 px-4 rounded-xl w-full"
             >
               Bezahlen
             </button>
