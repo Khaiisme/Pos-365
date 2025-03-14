@@ -182,7 +182,7 @@ const dishes = [
   { name: "D4", price: 12 },
   { name: "D5", price: 12 },
   { name: "49.Gebacken Banana", price: 3.9 },
-  
+
   { name: "Grüner Tee", price: 2.8 },
   { name: "Jasmin Tee", price: 2.8 },
   { name: "Ingwer Tee", price: 3.5 },
@@ -327,7 +327,7 @@ const App = () => {
       </div>
       <button
         onClick={addTable}
-        className="mt-6 bg-blue-500 text-black py-2 px-4 rounded"
+        className="mt-6 bg-blue-500 text-white py-2 px-4 rounded"
       >
         Abholung
       </button>
