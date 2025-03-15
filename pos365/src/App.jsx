@@ -193,14 +193,7 @@ const dishes = [
   { name: "Latte Machiato", price: 3 },
   { name: "Espresso", price: 2.2 },
   { name: "Kaffe VietNam", price: 4.5 },
-  { name: "Wasser Still", price: 2.5 },
-  { name: "Mineralwasser", price: 2.5 },
-  { name: "Coca Cola ", price: 2.5 },
-  { name: "Coca Light ", price: 2.5 },
-  { name: "Coca Zero ", price: 2.5 },
-  { name: "Spezi ", price: 2.5 },
-  { name: "Fanta ", price: 2.5 },
-  { name: "Sprite ", price: 2.5 },
+  
   { name: "Wasser Still", price:3.8 },
   { name: "Mineralwasser", price: 3.8 },
   { name: "Coca Cola ", price: 3.8 },
@@ -209,6 +202,14 @@ const dishes = [
   { name: "Spezi ", price: 3.8 },
   { name: "Fanta ", price: 3.8 },
   { name: "Sprite ", price:3.8 },
+  { name: "Wasser Still", price: 2.5 },
+  { name: "Mineralwasser", price: 2.5 },
+  { name: "Coca Cola ", price: 2.5 },
+  { name: "Coca Light ", price: 2.5 },
+  { name: "Coca Zero ", price: 2.5 },
+  { name: "Spezi ", price: 2.5 },
+  { name: "Fanta ", price: 2.5 },
+  { name: "Sprite ", price: 2.5 },
   { name: "Ginger Ale", price: 3 },
   { name: "Bitte Lemon", price: 3 },
   { name: "Tonic Wasser", price: 3 },
@@ -314,7 +315,7 @@ const App = () => {
   return (
     <div className="w-full max-w-[412px] h-[915px] mx-auto bg-white text-black flex flex-col items-center p-10">
       <h1 className="text-3xl font-bold mb-10">Hanoi Pho</h1>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
+      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => (
           <div
             key={index}
