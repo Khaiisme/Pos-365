@@ -18,8 +18,9 @@ const Modal = ({
   const [note, setNote] = useState(localStorage.getItem(tableName) || "");
   // Calculate the total
   const calculateTotal = () => {
-    return orderItems.reduce((total, item) => total + item.price, 0);
-  };
+    return parseFloat(orderItems.reduce((total, item) => total + item.price, 0).toFixed(1));
+};
+
 
   // Filter dishes based on the search query
   const filteredDishes = dishes.filter((dish) =>

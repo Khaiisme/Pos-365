@@ -44,7 +44,7 @@ const dishes = [
   { name: "21b.Pho Hühner", price: 10 },
   { name: "21c.Pho Rind", price: 13 },
   { name: "21f.Pho Special", price: 13 },
-  { name: "29.Bo Sot Vang", price: 14 },
+  { name: "29.Bo Sot Vang", price: 12 },
   { name: "52a.Curry Reisbandnudel Tofu", price:10  },
   { name: "52b.Curry Reisbandnudel Hühner", price:11  },
   { name: "52c.Curry Reisbandnudel Rind", price: 13 },
@@ -313,7 +313,7 @@ const App = () => {
   };
 
   return (
-    <div className="w-full max-w-[412px] h-[915px] mx-auto bg-white text-black flex flex-col items-center p-10">
+    <div className="w-full max-w-[412px] h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
       <h1 className="text-3xl font-bold mb-10">Hanoi Pho</h1>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => (
