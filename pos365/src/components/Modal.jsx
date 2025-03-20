@@ -65,13 +65,18 @@ const Modal = ({
       setClickTimer(newTimer);
     }
   };
-
+  let totalSales = parseFloat(localStorage.getItem("totalSales")) || 0; // Load from storage or set to 0
   // Handle the "Pay" button click
   const handlePay = () => {
     if (!tableName) {
       console.error("Table name is undefined!");
       return;
     }
+    const totalBill = calculateTotal();
+    totalSales += totalBill; // Add current bill to total sales
+    totalSales = parseFloat(totalSales.toFixed(1)); // Ensure correct rounding
+
+    localStorage.setItem("totalSales", totalSales); // Store in localStorage
 
     // Retrieve current orders from localStorage
     const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};

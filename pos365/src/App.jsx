@@ -311,10 +311,11 @@ const App = () => {
     const updatedOrders = { ...storedOrders, [currentTable]: updatedOrderItems };
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
   };
-
+  const totalSales = parseFloat(localStorage.getItem("totalSales")) || 0;
   return (
     <div className="w-full max-w-[412px] h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
       <h1 className="text-3xl font-bold mb-10">Hanoi Pho</h1>
+      <div>{totalSales}</div>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => (
           <div
