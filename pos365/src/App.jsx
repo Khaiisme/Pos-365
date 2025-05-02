@@ -13,7 +13,7 @@ const dishes = [
   { name: "06b.GlasnudelsupHühn", price: 6 },
   { name: "06c.GlasnudelsupGarnel", price:6.5  },
   { name: "07a.TomSuppe Tofu", price: 5 },
-  { name: "07a.TomSuppe Hühner", price: 6 },
+  { name: "07b.TomSuppe Hühner", price: 6 },
   { name: "08.TomJun", price: 7.5  },
   { name: "11a", price: 4.5 },
   { name: "11b", price: 5.5 },
@@ -183,6 +183,7 @@ const dishes = [
   { name: "D5", price: 12 },
   { name: "49.Gebacken Banana", price: 3.9 },
 
+  { name: "Flasche Wasser", price: 7 },
   { name: "Grüner Tee", price: 2.8 },
   { name: "Jasmin Tee", price: 2.8 },
   { name: "Ingwer Tee", price: 3.5 },
