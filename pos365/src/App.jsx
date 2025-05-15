@@ -317,7 +317,6 @@ const App = () => {
     const updatedOrders = { ...storedOrders, [currentTable]: updatedOrderItems };
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
   };
-  const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};
   const tablesWithOrders = Object.keys(storedOrders).filter(
     (table) => storedOrders[table] && storedOrders[table].length > 0
   ).map(Number); // convert to number if needed
