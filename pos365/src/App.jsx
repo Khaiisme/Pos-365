@@ -5,16 +5,16 @@ import Modal from "./components/Modal";
 // Sample dish data (name and price)
 const dishes = [
   { name: "01.GemuseSuppe", price: 4.5 },
-  { name: "02.HühnerSuppe", price:  5.5},
+  { name: "02.HühnerSuppe", price: 5.5 },
   { name: "03.GarnellenSuppe", price: 6.5 },
-  { name: "04.FishSuppe", price:6.5  },
-  { name: "05.VantanSuppe", price:6  },
+  { name: "04.FishSuppe", price: 6.5 },
+  { name: "05.VantanSuppe", price: 6 },
   { name: "06a.GlasnudelsupTofu", price: 5 },
   { name: "06b.GlasnudelsupHühn", price: 6 },
-  { name: "06c.GlasnudelsupGarnel", price:6.5  },
+  { name: "06c.GlasnudelsupGarnel", price: 6.5 },
   { name: "07a.TomSuppe Tofu", price: 5 },
   { name: "07b.TomSuppe Hühner", price: 6 },
-  { name: "08.TomJun", price: 7.5  },
+  { name: "08.TomJun", price: 7.5 },
   { name: "11a", price: 4.5 },
   { name: "11b", price: 5.5 },
   { name: "12a", price: 4.5 },
@@ -32,8 +32,8 @@ const dishes = [
   { name: "20c", price: 7.5 },
   { name: "09a.GlasnudelnSupp Tofu", price: 9 },
   { name: "09b.GlasnudelnSupp Hühner", price: 10 },
-  { name: "09e.GlasnudelnSupp Garnelen", price: 14},
-  { name: "09f.GlasnudelnSupp ", price:  18},
+  { name: "09e.GlasnudelnSupp Garnelen", price: 14 },
+  { name: "09f.GlasnudelnSupp ", price: 18 },
   { name: "10a.Gebratenglasnudel Tofu", price: 9 },
   { name: "10b.Gebratenglasnudel Hühner", price: 10 },
   { name: "10c.Gebratenglasnudel Rind", price: 13 },
@@ -45,26 +45,26 @@ const dishes = [
   { name: "21c.Pho Rind", price: 13 },
   { name: "21f.Pho Special", price: 13 },
   { name: "29.Bo Sot Vang", price: 12 },
-  { name: "52a.Curry Reisbandnudel Tofu", price:10  },
-  { name: "52b.Curry Reisbandnudel Hühner", price:11  },
+  { name: "52a.Curry Reisbandnudel Tofu", price: 10 },
+  { name: "52b.Curry Reisbandnudel Hühner", price: 11 },
   { name: "52c.Curry Reisbandnudel Rind", price: 13 },
-  { name: "52e.Curry Reisbandnudel Garnel", price:14  },
+  { name: "52e.Curry Reisbandnudel Garnel", price: 14 },
   { name: "52f.Curry Reisbandnudel Special", price: 18 },
   { name: "22a.Gebraten Nudeln Tofu", price: 10 },
   { name: "22b.Gebraten Nudeln Hühner", price: 11 },
   { name: "22c.Gebraten Nudeln Rind", price: 13 },
   { name: "22d.Gebraten Nudeln Enten", price: 12 },
-  { name: "22e.Gebraten Nudeln Garnel", price:  14},
+  { name: "22e.Gebraten Nudeln Garnel", price: 14 },
   { name: "22f.Gebraten Nudeln Special", price: 18 },
   { name: "23a.Pho Hanoi Tofu", price: 9 },
   { name: "23b.Pho Hanoi Hühner", price: 11 },
   { name: "23c.Pho Hanoi Fisch", price: 14 },
-  { name: "25.", price: 13 },
+  { name: "25.Reisnudelsuppe", price: 13 },
   { name: "26.Bun Tofu gebacken", price: 10 },
   { name: "27.Bun cha Hanoi", price: 12 },
   { name: "28.Bun nem Hanoi", price: 11 },
-  { name: "30", price: 22 },
-  { name: "31", price: 14 },
+  { name: "30.Bun Thap Cam", price: 22 },
+  { name: "31.Bun Bo Nam Bo", price: 14 },
   { name: "32a.Gebraten Udom Tofu ", price: 10 },
   { name: "32b.Gebraten Udom Hühner", price: 11 },
   { name: "32c.Gebraten Udom Rind", price: 13 },
@@ -80,21 +80,21 @@ const dishes = [
   { name: "34b.MangoSauce Hühner", price: 10 },
   { name: "34c.MangoSauce Rind", price: 11 },
   { name: "35a.ErdnussSauce Tofu", price: 9 },
-  { name: "35b.ErdnussSauce Hühner", price:10  },
+  { name: "35b.ErdnussSauce Hühner", price: 10 },
   { name: "35c.ErdnussSauce Rind", price: 13 },
-  { name: "35d.ErdnussSauce Enten", price: 11},
+  { name: "35d.ErdnussSauce Enten", price: 11 },
   { name: "35e.ErdnussSauce Garnel", price: 14 },
   { name: "36a.Pho Sauce Tofu", price: 9 },
-  { name: "36b.Pho Sauce Hühner", price:10  },
+  { name: "36b.Pho Sauce Hühner", price: 10 },
   { name: "36c.Pho Sauce Rind", price: 13 },
-  { name: "36d.Pho Sauce Enten", price:11  },
+  { name: "36d.Pho Sauce Enten", price: 11 },
   { name: "36e.Pho Sauce Garnel", price: 14 },
   { name: "37a.XaoXaOt Tofu", price: 9 },
   { name: "37b.XaoXaOt Hühner", price: 10 },
   { name: "37c.XaoXaOt Rind", price: 13 },
   { name: "37d.XaoXaOt Enten", price: 11 },
   { name: "37e.XaoXaOt Garnel", price: 14 },
-  { name: "38.", price: 13 },
+  { name: "38.Huhner gebraten", price: 13 },
   { name: "39.Gegrillte Garnelen", price: 40 },
   { name: "40.", price: 40 },
   { name: "41a.Knusprige Hühner", price: 11 },
@@ -112,6 +112,8 @@ const dishes = [
   { name: "43c.Knusprige Hühnerschenkel", price: 12 },
   { name: "43d.Knusprige Hühnerschenkel", price: 12 },
   { name: "43e.Knusprige Hühnerschenkel", price: 12 },
+  { name: "44.Tofu mit Tomaten", price: 10 },
+  { name: "45.Lachs gebacken mit Tomaten", price: 10 },
   { name: "46a.Fisch gebacken", price: 14 },
   { name: "46b.Fisch gebacken", price: 14 },
   { name: "46c.Fisch gebacken", price: 14 },
@@ -131,7 +133,7 @@ const dishes = [
   { name: "48e.GebratenReis Garnel", price: 14 },
   { name: "48f.GebratenReis knus Hühner", price: 12 },
   { name: "48g.GebratenReis knus Ente", price: 14 },
-  { name: "U1 mit Tofu", price:10  },
+  { name: "U1 mit Tofu", price: 10 },
   { name: "U2 mit Hühner", price: 11 },
   { name: "U3 mit Rind", price: 13 },
   { name: "U4 mit Enten", price: 12 },
@@ -139,7 +141,7 @@ const dishes = [
   { name: "U6 mit Fisch", price: 15 },
   { name: "U7 mit knusprige Hühner", price: 14 },
   { name: "U8 mit knusprige Enten", price: 15 },
-  { name: "R1 mit Tofu", price:10  },
+  { name: "R1 mit Tofu", price: 10 },
   { name: "R2 mit Hühner", price: 11 },
   { name: "R3 mit Rind", price: 13 },
   { name: "R4 mit Enten", price: 12 },
@@ -147,7 +149,7 @@ const dishes = [
   { name: "R6 mit Fisch", price: 15 },
   { name: "R7 mit knusprige Hühner", price: 14 },
   { name: "R8 mit knusprige Enten", price: 15 },
-  { name: "G1 mit Tofu", price:10  },
+  { name: "G1 mit Tofu", price: 10 },
   { name: "G2 mit Hühner", price: 11 },
   { name: "G3 mit Rind", price: 13 },
   { name: "G4 mit Enten", price: 12 },
@@ -155,7 +157,7 @@ const dishes = [
   { name: "G6 mit Fisch", price: 15 },
   { name: "G7 mit knusprige Hühner", price: 14 },
   { name: "G8 mit knusprige Enten", price: 15 },
-  { name: "B1 mit Tofu", price:10  },
+  { name: "B1 mit Tofu", price: 10 },
   { name: "B2 mit Hühner", price: 11 },
   { name: "B3 mit Rind", price: 13 },
   { name: "B4 mit Enten", price: 12 },
@@ -190,19 +192,19 @@ const dishes = [
   { name: "Kumquat Tee", price: 3.5 },
   { name: "Limet-Zitron Tee", price: 3.5 },
   { name: "Kaffe ", price: 2.5 },
-  { name: "Capuchino", price:2.5  },
+  { name: "Capuchino", price: 2.5 },
   { name: "Latte Machiato", price: 3 },
   { name: "Espresso", price: 2.2 },
   { name: "Kaffe VietNam", price: 4.5 },
-  
-  { name: "Wasser Still", price:3.8 },
+
+  { name: "Wasser Still", price: 3.8 },
   { name: "Mineralwasser", price: 3.8 },
   { name: "Coca Cola ", price: 3.8 },
   { name: "Coca Light ", price: 3.8 },
   { name: "Coca Zero ", price: 3.8 },
   { name: "Spezi ", price: 3.8 },
   { name: "Fanta ", price: 3.8 },
-  { name: "Sprite ", price:3.8 },
+  { name: "Sprite ", price: 3.8 },
   { name: "Wasser Still", price: 2.5 },
   { name: "Mineralwasser", price: 2.5 },
   { name: "Coca Cola ", price: 2.5 },
@@ -236,7 +238,7 @@ const dishes = [
   { name: "Kirschsaft", price: 4 },
   { name: "Mangosaft", price: 4 },
   { name: "Maracujasaft", price: 4 },
-  { name: "Guavensaft", price: 4},
+  { name: "Guavensaft", price: 4 },
   { name: "Litschisaft", price: 4 },
   { name: "Kiba", price: 4 },
 
@@ -261,12 +263,15 @@ const dishes = [
   { name: "Flasche von Weißwein/Rotwein", price: 19.9 },
   { name: "Merlot", price: 6 },
   { name: "Bordeaux", price: 6 },
-  
+
 ];
 
 const App = () => {
   // Read from localStorage and set the initial state for tables and orders
-  const storedTables = JSON.parse(localStorage.getItem("tables")) || Array.from({ length: 11 }, (_, i) => i + 1);
+  const storedTables = JSON.parse(localStorage.getItem("tables")) || [
+    ...Array.from({ length: 11 }, (_, i) => i + 1),         // 1 to 11
+    ...Array.from({ length: 5 }, (_, i) => i + 15)          // 15 to 19
+  ];
   const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};
 
   const [tables, setTables] = useState(storedTables);
@@ -312,22 +317,32 @@ const App = () => {
     const updatedOrders = { ...storedOrders, [currentTable]: updatedOrderItems };
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
   };
+  const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};
+  const tablesWithOrders = Object.keys(storedOrders).filter(
+    (table) => storedOrders[table] && storedOrders[table].length > 0
+  ).map(Number); // convert to number if needed
+
   const totalSales = parseFloat(localStorage.getItem("totalSales")) || 0;
   return (
     <div className="w-full max-w-[412px] h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
       <h1 className="text-3xl font-bold mb-10">Hanoi Pho</h1>
-      <div>{totalSales}</div>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
-        {tables.map((table, index) => (
-          <div
-            key={index}
-            className="cursor-pointer"
-            onClick={() => handleTableClick(table)}
-          >
-            <Table number={table} />
-          </div>
-        ))}
+        {tables.map((table, index) => {
+          const hasOrder = tablesWithOrders.includes(table);
+
+          return (
+            <div
+              key={index}
+              className={`cursor-pointer rounded-xl p-2 transition-colors ${hasOrder ? "bg-blue-500 text-white" : "bg-white"
+                }`}
+              onClick={() => handleTableClick(table)}
+            >
+              <Table number={table} />
+            </div>
+          );
+        })}
       </div>
+
       <button
         onClick={addTable}
         className="mt-6 bg-blue-500 text-white py-2 px-4 rounded"
@@ -350,6 +365,6 @@ const App = () => {
       />
     </div>
   );
-};  
+};
 
 export default App;
