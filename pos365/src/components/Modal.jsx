@@ -207,7 +207,7 @@ const Modal = ({
 
           {/* Total */}
           <div className="mt-4 font-bold bg-blue-300 w-full rounded-lg p-4">
-            Ingesamt:<span className="text-2xl ml-20">{calculateTotal()}€</span>
+            Insgesamt:<span className="text-2xl ml-20">{calculateTotal()}€</span>
           </div>
 
           {/* Pay Button */}
