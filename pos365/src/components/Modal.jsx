@@ -129,7 +129,7 @@ const Modal = ({
       <div className="text-xl fixed inset-0 bg-gray-400 bg-opacity-50 flex justify-center items-center z-50">
         <div
           ref={modalRef}
-          className="bg-white p-6 rounded-lg w-full h-full sm:max-w-md sm:max-h-screen overflow-y-auto"
+          className="bg-white p-4 rounded-lg w-[90%] max-w-sm max-h-[90vh] sm:max-w-md sm:max-h-screen overflow-y-auto"
         >
           {/* Close button (X) */}
           <button
@@ -206,11 +206,12 @@ const Modal = ({
                   <span className="text-xl text-black">{item.price}€</span>
                   <button
                     onClick={() => removeOrderItem(index)}
-                    className="text-gray-700 text-xs p-0 leading-none "
+                    className="text-gray-700 text-[10px] p-0 leading-none"
                     style={{ background: 'none', border: 'none' }}
                   >
-                    X
+                    ✕ 
                   </button>
+
                 </div>
               </div>
             ))}

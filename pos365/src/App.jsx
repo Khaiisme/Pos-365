@@ -317,7 +317,7 @@ const App = () => {
   return (
     <div className="w-full overflow-y-auto bg-white text-black flex flex-col items-center p-15">
       <h1 className="text-3xl text-green-300 font-bold mb-10">Asian Loop</h1>
-      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
+      <div className="grid grid-cols-3 gap-4 w-full">
         {tables.map((table, index) => {
           const hasOrder = tablesWithOrders.includes(table);
 
