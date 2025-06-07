@@ -198,13 +198,13 @@ const Modal = ({
                 key={index}
                 className="flex justify-between items-center p-2 border-b last:border-0 hover:bg-gray-100"
               >
-                <div className="flex flex-col">
+                <div className="flex items-center space-x-4">
                   <span className="font-semibold">{item.name}</span>
-                  <span className="text-sm text-gray-600">{item.price}€</span>
+                  <span className="text-sm font-semibold text-black">{item.price}€</span>
                 </div>
                 <button
                   onClick={() => removeOrderItem(index)}
-                  className="text-black text-sm ml-2 p-0 leading-none hover:text-red-700"
+                  className="text-black text-sm p-0 leading-none "
                   style={{ background: 'none', border: 'none' }}
                 >
                   ✕
