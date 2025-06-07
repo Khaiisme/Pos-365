@@ -269,8 +269,8 @@ const dishes = [
 const App = () => {
   // Read from localStorage and set the initial state for tables and orders
   const storedTables = JSON.parse(localStorage.getItem("tables")) || [
-    ...Array.from({ length: 11 }, (_, i) => i + 1),         // 1 to 11
-    ...Array.from({ length: 5 }, (_, i) => i + 15)          // 15 to 19
+    ...Array.from({ length: 15 }, (_, i) => i + 1),         // 1 to 11
+    ...Array.from({ length: 8 }, (_, i) => i + 20)          // 15 to 19
   ];
   const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};
 
@@ -315,8 +315,8 @@ const App = () => {
 
   const totalSales = parseFloat(localStorage.getItem("totalSales")) || 0;
   return (
-    <div className="w-full max-w-[412px] h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
-      <h1 className="text-3xl font-bold mb-10">Hanoi Pho</h1>
+    <div className="w-full  h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
+      <h1 className="text-3xl text-oklch(79.2% 0.209 151.711) font-bold mb-10">ASian Loop</h1>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => {
           const hasOrder = tablesWithOrders.includes(table);

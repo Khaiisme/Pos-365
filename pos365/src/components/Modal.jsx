@@ -199,7 +199,7 @@ const Modal = ({
                 className="flex justify-between items-center px-2 py-1 border-b last:border-0 hover:bg-gray-100"
               >
                 {/* Left: Item name */}
-                <span className="font-semibold text-2xl">{item.name}</span>
+                <span className="font-semibold text-xl">{item.name}</span>
 
                 {/* Right: Price + Remove button */}
                 <div className="flex items-center space-x-0">
@@ -209,7 +209,7 @@ const Modal = ({
                     className="text-gray-700 text-xs p-0 leading-none "
                     style={{ background: 'none', border: 'none' }}
                   >
-                    ✕
+                    X
                   </button>
                 </div>
               </div>
