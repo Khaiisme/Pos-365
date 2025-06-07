@@ -196,18 +196,18 @@ const Modal = ({
             {orderItems.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center p-2 border-b last:border-0 hover:bg-gray-100"
+                className="flex justify-between items-center p-0 border-b last:border-0 hover:bg-gray-100"
               >
                 <div className="flex items-center space-x-4">
                   <span className="font-semibold">{item.name}</span>
-                  <span className="text-sm font-semibold text-black">{item.price}€</span>
+                  <span className="text-xl font-semibold text-black mr-0">{item.price}€</span>
                 </div>
                 <button
                   onClick={() => removeOrderItem(index)}
-                  className="text-black text-sm p-0 leading-none "
+                  className="text-black text-sm p-0 leading-none mr-1"
                   style={{ background: 'none', border: 'none' }}
                 >
-                  ✕
+                X
                 </button>
               </div>
             ))}
