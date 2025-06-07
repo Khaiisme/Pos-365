@@ -315,7 +315,7 @@ const App = () => {
 
   const totalSales = parseFloat(localStorage.getItem("totalSales")) || 0;
   return (
-    <div className="w-full overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
+    <div className="w-full overflow-y-auto bg-white text-black flex flex-col items-center p-8">
       <h1 className="text-3xl text-green-300 font-bold mb-10">Asian Loop</h1>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => {
