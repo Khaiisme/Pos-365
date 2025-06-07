@@ -192,17 +192,17 @@ const Modal = ({
           </div>
 
           {/* Order Items */}
-          <div className="mt-2 p-2 border border-gray-300 rounded-lg shadow-lg bg-white">
+          <div className="mt-2 p-1 border border-gray-300 rounded-lg shadow-lg bg-white">
             {orderItems.map((item, index) => (
               <div
                 key={index}
                 className="flex justify-between items-center px-2 py-1 border-b last:border-0 hover:bg-gray-100"
               >
                 {/* Left: Item name */}
-                <span className="font-medium text-sm">{item.name}</span>
+                <span className="font-semibold text-2xl">{item.name}</span>
 
                 {/* Right: Price + Remove button */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-0">
                   <span className="text-xl text-black">{item.price}€</span>
                   <button
                     onClick={() => removeOrderItem(index)}
