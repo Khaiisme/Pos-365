@@ -315,8 +315,8 @@ const App = () => {
 
   const totalSales = parseFloat(localStorage.getItem("totalSales")) || 0;
   return (
-    <div className="w-full  h-[915px] overflow-y-auto mx-auto bg-white text-black flex flex-col items-center p-10">
-      <h1 className="text-3xl text-oklch(79.2% 0.209 151.711) font-bold mb-10">ASian Loop</h1>
+     <div className="w-full min-h-screen overflow-y-auto bg-white text-black p-4">
+      <h1 className="text-3xl text-green-200 font-bold mb-10">Asian Loop</h1>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
         {tables.map((table, index) => {
           const hasOrder = tablesWithOrders.includes(table);
