@@ -19,7 +19,7 @@ const Modal = ({
   // Calculate the total
   const calculateTotal = () => {
     return parseFloat(orderItems.reduce((total, item) => total + item.price, 0).toFixed(1));
-};
+  };
 
 
   // Filter dishes based on the search query
@@ -103,7 +103,7 @@ const Modal = ({
   };
 
   // Retrieve the stored note for this specific table from localStorage or use an empty string if no note is found
-  
+
 
   useEffect(() => {
     if (tableName) {
@@ -196,13 +196,21 @@ const Modal = ({
             {orderItems.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center p-2 cursor-pointer border-b last:border-0 hover:bg-gray-100"
-                onClick={() => handleItemClick(index)} // Handle double-click to remove item
+                className="flex justify-between items-center p-2 border-b last:border-0 hover:bg-gray-100"
               >
-                <span className="font-semibold">{item.name}</span>
-                <span className="font-semibold">{item.price}€</span>
+                <div>
+                  <span className="font-semibold block">{item.name}</span>
+                  <span className="text-sm text-gray-600">{item.price}€</span>
+                </div>
+                <button
+                  onClick={() => removeOrderItem(index)}
+                  className="text-red-500 font-bold text-lg ml-4 hover:text-red-700"
+                >
+                  ✕
+                </button>
               </div>
             ))}
+
           </div>
 
           {/* Total */}

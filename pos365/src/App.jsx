@@ -280,15 +280,7 @@ const App = () => {
   const [currentTable, setCurrentTable] = useState(null);
   const [abholungCount, setAbholungCount] = useState(0);
 
-  // Add an "Abholung" table with a dynamic name (e.g., Abholung 1, Abholung 2)
-  const addTable = () => {
-    const newAbholungName = `Abholung ${abholungCount + 1}`;
-    const updatedTables = [...tables, newAbholungName];
-    setTables(updatedTables);
-    localStorage.setItem("tables", JSON.stringify(updatedTables)); // Save to localStorage
-
-    setAbholungCount(abholungCount + 1);
-  };
+  // Add an "Abholung" table with a dynamic name (e.g., Abholung 1, Abholung 2
 
   // Handle clicking on a table to open the modal and reset order items
   const handleTableClick = (tableName) => {
@@ -342,12 +334,6 @@ const App = () => {
         })}
       </div>
 
-      <button
-        onClick={addTable}
-        className="mt-6 bg-blue-500 text-white py-2 px-4 rounded"
-      >
-        Abholung
-      </button>
 
       {/* Modal */}
       <Modal
