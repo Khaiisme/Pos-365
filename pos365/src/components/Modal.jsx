@@ -206,10 +206,10 @@ const Modal = ({
                   <span className="text-xl text-black">{item.price}€</span>
                   <span
                     onClick={() => removeOrderItem(index)}
-                    className="text-gray-700 text-xs p-0 leading-none "
+                    className="text-gray-700 text-xl p-0 leading-none "
                     style={{ background: 'none', border: 'none' }}
                   >
-                    X
+                     ✕
                   </span>
                 </div>
               </div>
