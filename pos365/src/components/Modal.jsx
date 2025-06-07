@@ -204,9 +204,9 @@ const Modal = ({
                 </div>
                 <button
                   onClick={() => removeOrderItem(index)}
-                  className="text-red-500 font-bold text-lg ml-4 hover:text-red-700"
+                  className="text-black text-sx ml-1 "
                 >
-                  ✕
+                  x
                 </button>
               </div>
             ))}
