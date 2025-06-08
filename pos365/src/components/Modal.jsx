@@ -235,7 +235,7 @@ const Modal = ({
                     type="checkbox"
                     checked={!!checkedItems[index]}
                     onChange={() => toggleChecked(index)}
-                    className="w-3 h-3"
+                    className="w-5 h-5"
                   />
                   <span className="font-semibold text-xl">{item.name}</span>
                 </div>
@@ -259,8 +259,8 @@ const Modal = ({
           </div>
           {/* Total price of checked items */}
           {totalPrice > 0 && (
-            <div className="mt-3 text-right font-bold text-lg text-green-700">
-              Total of selected items: {totalPrice.toFixed(2)}€
+            <div className="mt-3 text-right font-bold text-xl text-green-700">
+              Getrennt: {totalPrice.toFixed(2)}€
             </div>
           )}
 
