@@ -203,7 +203,7 @@ const Modal = ({
 
                 {/* Right: Price + Remove button */}
                 <div className="flex items-center space-x-0">
-                  <span className="text-xl text-black">{item.price}€</span>
+                  <span className="text-xl text-black mr-1 ">{item.price}€</span>
                   <span
                     onClick={() => removeOrderItem(index)}
                     className="text-gray-700 text-xl p-0 leading-none "
