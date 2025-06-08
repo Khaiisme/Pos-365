@@ -338,7 +338,7 @@ const App = () => {
     ...Array.from({ length: 15 }, (_, i) => i + 1),         // 1 to 11
     ...Array.from({ length: 8 }, (_, i) => i + 20)          // 15 to 19
   ];
-  const storedOrders = JSON.parse(localStorage.getItem("orders")) || {};
+  const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
 
   const [tables, setTables] = useState(storedTables);
   const [orderItems, setOrderItems] = useState(storedOrders);
