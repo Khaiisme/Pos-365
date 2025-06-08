@@ -105,7 +105,6 @@ const Modal = ({
     }
     const totalBill = calculateTotal();
     totalSales += totalBill; // Add current bill to total sales
-    totalSales = parseFloat(totalSales.toFixed(1)); // Ensure correct rounding
 
     localStorage.setItem("totalSales", totalSales); // Store in localStorage
 
