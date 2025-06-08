@@ -19,9 +19,20 @@ const Modal = ({
   const [note, setNote] = useState(localStorage.getItem(tableName) || "");
   // Calculate the total
   const calculateTotal = () => {
-  const total = orderItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
-  return total.toFixed(2);
-};
+    let total = 0;
+
+    if (Array.isArray(orderItems)) {
+      orderItems.forEach((item) => {
+        total += parseFloat(item.price);
+      });
+    }
+
+    return total.toFixed(2); // Returns a string like "20.00"
+  };
+  //   const calculateTotal = () => {
+  //   const total = orderItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
+  //   return total.toFixed(2);
+  // };
   ///calculate the total price of checked items
   const [checkedItems, setCheckedItems] = useState({});
   const toggleChecked = (index) => {
@@ -31,9 +42,15 @@ const Modal = ({
     }));
   };
 
-  const totalPrice = orderItems.reduce((sum, item, index) => {
-    return checkedItems[index] ? sum + parseFloat(item.price) : sum;
-  }, 0);
+  let totalPrice = 0;
+
+  if (Array.isArray(orderItems)) {
+    orderItems.forEach((item, index) => {
+      if (checkedItems[index]) {
+        totalPrice += parseFloat(item.price);
+      }
+    });
+  }
 
 
   // Filter dishes based on the search query
