@@ -18,8 +18,21 @@ const Modal = ({
   const [note, setNote] = useState(localStorage.getItem(tableName) || "");
   // Calculate the total
   const calculateTotal = () => {
-    return parseFloat(orderItems.reduce((total, item) => total + item.price, 0).toFixed(1));
+  const total = orderItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
+  return total.toFixed(2);
+};
+  ///calculate the total price of checked items
+  const [checkedItems, setCheckedItems] = useState({});
+  const toggleChecked = (index) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
+
+  const totalPrice = orderItems.reduce((sum, item, index) => {
+    return checkedItems[index] ? sum + parseFloat(item.price) : sum;
+  }, 0);
 
 
   // Filter dishes based on the search query
@@ -34,21 +47,21 @@ const Modal = ({
   };
 
   // Close the dropdown if clicking outside the search bar
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (
-        searchWrapperRef.current &&
-        !searchWrapperRef.current.contains(event.target)
-      ) {
-        setShowDishes(false); // Hide the dropdown when clicking outside
-      }
-    };
+  // useEffect(() => {
+  //   const handleOutsideClick = (event) => {
+  //     if (
+  //       searchWrapperRef.current &&
+  //       !searchWrapperRef.current.contains(event.target)
+  //     ) {
+  //       setShowDishes(false); // Hide the dropdown when clicking outside
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
+  //   document.addEventListener("mousedown", handleOutsideClick);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleOutsideClick);
+  //   };
+  // }, []);
 
   // Handle double-click on an order item
   const [clickTimer, setClickTimer] = useState(null); // Timer to handle double click
@@ -198,8 +211,16 @@ const Modal = ({
                 key={index}
                 className="flex justify-between items-center px-2 py-1 border-b last:border-0 hover:bg-gray-100"
               >
-                {/* Left: Item name */}
-                <span className="font-semibold text-xl">{item.name}</span>
+                {/* Left: Checkbox + Item name */}
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    checked={!!checkedItems[index]}
+                    onChange={() => toggleChecked(index)}
+                    className="w-3 h-3"
+                  />
+                  <span className="font-semibold text-xl">{item.name}</span>
+                </div>
 
                 {/* Right: Price + Remove button */}
                 <div className="flex items-center space-x-0">
@@ -209,7 +230,7 @@ const Modal = ({
                     className="text-gray-700 text-xl p-0 leading-none "
                     style={{ background: 'none', border: 'none' }}
                   >
-                     ✕
+                    ✕
                   </span>
                 </div>
               </div>
@@ -218,6 +239,12 @@ const Modal = ({
 
 
           </div>
+          {/* Total price of checked items */}
+          {totalPrice > 0 && (
+            <div className="mt-3 text-right font-bold text-lg text-green-700">
+              Total of selected items: {totalPrice.toFixed(2)}€
+            </div>
+          )}
 
           {/* Total */}
           <div className="mt-4 font-bold bg-blue-300 w-full rounded-lg p-4">

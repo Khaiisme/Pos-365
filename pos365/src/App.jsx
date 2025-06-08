@@ -4,6 +4,30 @@ import Modal from "./components/Modal";
 
 // Sample dish data (name and price)
 const dishes = [
+  { name: "M1", price: 11.9 },
+  { name: "M2a.Mit Tofu", price: 10.9 },
+  { name: "M2b.Mit gebratem Hähnchen", price: 11.9 },
+  { name: "M3", price: 9.5 },
+  { name: "M4", price: 9.5 },
+  { name: "M5", price: 8.5 },
+  { name: "M6", price: 10.5 },
+  { name: "M7", price: 10.9 },
+  { name: "M8a.Mit Tofu", price: 10.5 },
+  { name: "M8b.Mit Tofu", price: 11.9 },
+  { name: "M9", price: 11.9 },
+  { name: "Kinder Menu 1", price: 8 },
+  { name: "Kinder Menu 2", price: 9 },
+  { name: "B1.Duftreis", price: 2 },
+  { name: "B2.SüBkartoffel", price: 2.5 },
+  { name: "B3.Reisnudeln", price: 2 },
+  { name: "B4.Udon Nudeln", price: 3 },
+  { name: "B5.Extra Sauce", price: 1 },
+  { name: "D1.Mochi Eis", price: 7.5 },
+  { name: "D2.Grüntee Eis", price: 6.9 },
+  { name: "D3.Mango Reis", price: 8.5 },
+  { name: "D4.Chuoi chien", price: 7.5 },
+
+  
   { name: "01a.Kokossupe Tofu", price: 5.5 },
   { name: "01b.Kokossuppe Hähnchen", price: 6.5 },
   { name: "01c.Kokossuppe Garnelen", price: 7 },
