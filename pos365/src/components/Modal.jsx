@@ -234,7 +234,7 @@ const Modal = ({
                     type="checkbox"
                     checked={!!checkedItems[index]}
                     onChange={() => toggleChecked(index)}
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                   />
                   <span className="font-semibold text-xl">{item.name}</span>
                 </div>
