@@ -261,6 +261,13 @@ const dishes = [
   { name: "238.Honig Tee", price: 3.9 },
   { name: "239.Roseblumen Tee", price: 3.9 },
 
+  { name: "240.Ca Phe Vietnam", price: 4.9 },
+  { name:"Espresso", price: 2.9 },
+  { name:"Kaffee Crema", price: 3.9 },
+  { name: "Cappuccino", price: 4.5 },
+  { name: "Latte Macchiato", price: 4.5 },
+  { name: "Milchkaffe", price: 4.5 },
+
 
   { name: "Flasche Wasser", price: 7.5 },
 
@@ -310,7 +317,7 @@ const dishes = [
   { name: "Litschisaft", price: 4.7 },
   { name: "Kiba", price: 4.7 },
 
-  { name: "Bitburger", price: 3.9 },
+  { name: "Bitburger Klein", price: 3.9 },
   { name: "Radler Klein ", price: 3.9 },
   { name: "Diesel Klein", price: 3.9 },
   { name: "Bitburger Groß", price: 5.5 },
@@ -328,8 +335,14 @@ const dishes = [
   { name: "Riesling Halbtrocken", price: 5.5 },
   { name: "Sauvignon ", price: 6 },
   { name: "Grauburgrunder ", price: 7 },
-  
-
+  { name: "Rose trocken", price: 5.5 },
+  { name: "Flasche Rose wein", price: 18 },
+  { name: "Flasche Riesling", price: 21.5 },
+  { name: "Flasche Chardonay", price: 20 },
+  { name: "Flasche Sauvignon", price: 20 },
+  { name: "Flasche Grauburgrunder", price: 23.5 },
+  { name: "Flasche Merlot", price: 20 },
+  { name: "Merlot", price: 6.5 },
 ];
 
 const App = () => {
