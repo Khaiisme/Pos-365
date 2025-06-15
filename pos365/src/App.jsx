@@ -199,7 +199,7 @@ const dishes = [
   { name: "114.Avocado Roll", price: 12.9 },
   { name: "115.Unagi Special Roll ", price: 14.9 },
 
-  { name: "116.Crunchy Chicken ", price: 10.5 },
+  { name: "116.Crunchy Chicken ", price: 9.5 },
   { name: "117.Crunchy Lachs Roll", price: 10.5 },
   { name: "118.Crunchy Ebi", price: 10.5 },
   { name: "119.Crunchy Tuna", price: 10.9 },
