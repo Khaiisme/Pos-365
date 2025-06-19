@@ -28,24 +28,24 @@ const dishes = [
   { name: "D4.Chuoi chien", price: 7.5 },
 
   
-  { name: "01a.Kokossupe Tofu", price: 5.5 },
-  { name: "01b.Kokossuppe Hähnchen", price: 6.5 },
-  { name: "01c.Kokossuppe Garnelen", price: 7 },
-  { name: "02a.Misosuppe Tofu", price: 5 },
-  { name: "02b.Misosuppe Lachs", price: 7.5 },
-  { name: "03.Tom Yum Suppe ", price: 7.5 },
-  { name: "04a.Sommerrollen", price: 6.5 },
-  { name: "04b.Sommerrollen", price: 7 },
-  { name: "04c.Sommerrollen", price: 7.5 },
-  { name: "05.Frühlingsrollen", price: 6.9 },
-  { name: "06.Frühlingsrollen Vegan", price: 6.5 },
-  { name: "06a.Gyoza Vegan", price: 6.5 },
-  { name: "06a.Gyoza Hähnchen", price: 6.9 },
+  { name: "1a.Kokossupe Tofu", price: 5.5 },
+  { name: "1b.Kokossuppe Hähnchen", price: 6.5 },
+  { name: "1c.Kokossuppe Garnelen", price: 7 },
+  { name: "2a.Misosuppe Tofu", price: 5 },
+  { name: "2b.Misosuppe Lachs", price: 7.5 },
+  { name: "3.Tom Yum Suppe ", price: 7.5 },
+  { name: "4a.Sommerrollen", price: 6.5 },
+  { name: "4b.Sommerrollen", price: 7 },
+  { name: "4c.Sommerrollen", price: 7.5 },
+  { name: "5.Frühlingsrollen", price: 6.9 },
+  { name: "6.Frühlingsrollen Vegan", price: 6.5 },
+  { name: "6a.Gyoza Vegan", price: 6.5 },
+  { name: "6a.Gyoza Hähnchen", price: 6.9 },
 
-  { name: "07a.Ha Cao ", price: 7.5 },
-  { name: "07b.Ha Cao ", price: 8.5 },
-  { name: "08.Ca Vien Chien", price: 7.5 },
-  { name: "09.Ebi Tempura", price: 7.5 },
+  { name: "7a.Ha Cao ", price: 7.5 },
+  { name: "7b.Ha Cao ", price: 8.5 },
+  { name: "8.Ca Vien Chien", price: 7.5 },
+  { name: "9.Ebi Tempura", price: 7.5 },
   { name: "10.Tom Chien Com", price: 8.5 },
   { name: "11.Chichken Tempura", price: 7.9 },
   { name: "12.Yakitori", price: 7.5 },
@@ -246,7 +246,7 @@ const dishes = [
   { name: "224.Mango Lassi", price: 6 },
   { name: "225.Blue Asia", price: 6.5 },
   { name: "226.Maracuja Komblumen", price: 7 },
-  { name: "227.TRa Chanh Komblume", price: 7 },
+  { name: "227.Tra Chanh Komblume", price: 7 },
   { name: "228.Red Drink", price: 7 },
   { name: "229.Blue TRee", price: 7 },
   { name: "230.Mai Tai", price: 7.5 },
@@ -346,6 +346,42 @@ const dishes = [
 ];
 
 const App = () => {
+  // Get the whole orders object from localStorage
+const ordersObj = JSON.parse(localStorage.getItem("orders") || "{}");
+
+// Convert to array of documents like: { table: "2", orders: [...] }
+const tables = Object.entries(ordersObj).map(([table, orders]) => ({
+  table,
+  orders
+}));
+
+// Send to backend
+fetch('http://localhost:3000/api/orders', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(tables)
+})
+  .then(res => res.json())
+  .then(data => console.log("Synced to DB:", data))
+  .catch(err => console.error("Error syncing orders:", err));
+
+  // Retrieve orders from the backend 
+  fetch('http://localhost:3000/api/orders')
+  .then(res => res.json())
+  .then(data => {
+    if (Array.isArray(data)) {
+      const ordersObject = {};
+
+      data.forEach(({ table, orders }) => {
+        ordersObject[table] = orders;
+      });
+
+      localStorage.setItem("orders", JSON.stringify(ordersObject));
+      console.log("Restored orders from DB to localStorage");
+    }
+  })
+  .catch(err => console.error("Error fetching orders:", err));
+
   // Read from localStorage and set the initial state for tables and orders
   const storedTables = JSON.parse(localStorage.getItem("tables")) || [
     ...Array.from({ length: 15 }, (_, i) => i + 1),         // 1 to 11
