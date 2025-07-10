@@ -347,41 +347,6 @@ const dishes = [
 
 const App = () => {
   // Get the whole orders object from localStorage
-const ordersObj = JSON.parse(localStorage.getItem("orders") || "{}");
-
-// Convert to array of documents like: { table: "2", orders: [...] }
-const tables = Object.entries(ordersObj).map(([table, orders]) => ({
-  table,
-  orders
-}));
-
-// Send to backend
-fetch('http://localhost:3000/api/orders', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(tables)
-})
-  .then(res => res.json())
-  .then(data => console.log("Synced to DB:", data))
-  .catch(err => console.error("Error syncing orders:", err));
-
-  // Retrieve orders from the backend 
-  fetch('http://localhost:3000/api/orders')
-  .then(res => res.json())
-  .then(data => {
-    if (Array.isArray(data)) {
-      const ordersObject = {};
-
-      data.forEach(({ table, orders }) => {
-        ordersObject[table] = orders;
-      });
-
-      localStorage.setItem("orders", JSON.stringify(ordersObject));
-      console.log("Restored orders from DB to localStorage");
-    }
-  })
-  .catch(err => console.error("Error fetching orders:", err));
-
   // Read from localStorage and set the initial state for tables and orders
   const storedTables = JSON.parse(localStorage.getItem("tables")) || [
     ...Array.from({ length: 15 }, (_, i) => i + 1),         // 1 to 11
