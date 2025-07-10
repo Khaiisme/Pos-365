@@ -53,11 +53,10 @@ const Modal = ({
   }
 
 
- const filteredDishes = dishes.filter((dish) => {
-  const query = searchQuery.trim();
-  const regex = new RegExp(`^${query}\\b`, 'i');
-  return regex.test(dish.name);
-});
+  // Filter dishes based on the search query
+  const filteredDishes = dishes.filter((dish) =>
+    dish.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   // Handle search input changes
   const handleSearchChange = (e) => {
